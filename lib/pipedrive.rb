@@ -46,6 +46,7 @@ require 'pipedrive/base'
 require 'pipedrive/utils'
 require 'pipedrive/operations/create'
 require 'pipedrive/operations/read'
+require 'pipedrive/operations/search'
 require 'pipedrive/operations/update'
 require 'pipedrive/operations/delete'
 

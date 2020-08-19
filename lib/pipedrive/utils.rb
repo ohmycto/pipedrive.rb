@@ -14,5 +14,14 @@ module Pipedrive
         start = res.try(:additional_data).try(:pagination).try(:next_start)
       end
     end
+
+    def fetch_one(method, args, params)
+      params = params.merge(start: 0, limit: 1)
+      res = __send__(method, *args, params)
+      
+      if res.try(:data) && res.success?
+        res.data.items.first.try(:item)
+      end
+    end
   end
 end
